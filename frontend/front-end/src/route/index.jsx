@@ -1,6 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 import App from '../App.jsx';
-import Home from '../pages/Home.jsx';
+import Home from '../pages/home.jsx';
 import Login from '../pages/Login.jsx';
 import Register from '../pages/Register.jsx';
 import ProductSearchPage from '../pages/ProductSearchPage.jsx';

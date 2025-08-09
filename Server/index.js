@@ -33,13 +33,22 @@ const connectDB = async () => {
 app.use(cors({
   origin: [
     process.env.CLIENT_URL,
+    'https://vastraa-ten.vercel.app',
     'http://localhost:5173',
-    'http://localhost:5174'
+    'http://localhost:5174',
   ].filter(Boolean), 
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE']
 }));
+app.options('*', cors());
 
+app.get('/api/test', (req, res) => {
+  res.json({ 
+    status: 'Backend is working!',
+    database: mongoose.connection.readyState === 1 ? 'Connected' : 'Disconnected',
+    time: new Date().toISOString()
+  });
+});
 app.use(helmet());
 app.use(morgan('dev'));
 app.use(cookieParser());

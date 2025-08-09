@@ -34,12 +34,14 @@ const Register = () => {
 
   try {
     const response = await axios.post(
-      "http://localhost:5000/api/user/register",
+      "https://vastraa-ten.vercel.app/api/user/register",
+      
       {
         name: formData.name,
         email: formData.email,
         password: formData.password
       },
+      
       {
         headers: {
           "Content-Type": "application/json"
