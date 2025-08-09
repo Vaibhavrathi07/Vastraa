@@ -4,7 +4,7 @@ import backgroundImage from '../assets/photo-1483985988355-763728e1935b.jpeg'
 import { useNavigate } from 'react-router-dom';
 
 
-const home = () => {
+const Home = () => {
   const navigate = useNavigate();
   return (
     <div className="home-container">
@@ -30,4 +30,4 @@ const home = () => {
   )
 }
 
-export default home
+export default Home
