@@ -31,10 +31,11 @@ const Register = () => {
   }
 
   setIsLoading(true);
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   try {
     const response = await axios.post(
-      "http://localhost:5000/api/user/register",
+      "${apiUrl}/api/user/register",
       {
         name: formData.name,
         email: formData.email,
