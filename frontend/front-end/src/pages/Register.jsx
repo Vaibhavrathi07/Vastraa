@@ -34,8 +34,7 @@ const Register = () => {
 
   try {
     const response = await axios.post(
-      "https://vastraa-ten.vercel.app/api/user/register",
-      
+      "http://localhost:5000/api/user/register",
       {
         name: formData.name,
         email: formData.email,

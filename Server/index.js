@@ -40,15 +40,7 @@ app.use(cors({
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE']
 }));
-app.options('*', cors());
 
-app.get('/api/test', (req, res) => {
-  res.json({ 
-    status: 'Backend is working!',
-    database: mongoose.connection.readyState === 1 ? 'Connected' : 'Disconnected',
-    time: new Date().toISOString()
-  });
-});
 app.use(helmet());
 app.use(morgan('dev'));
 app.use(cookieParser());
