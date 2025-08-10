@@ -1,20 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Search from "../components/Search.jsx";
+import axios from "axios";
 
 const ProductSearchPage = () => {
   const [results, setResults] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [cartItems, setCartItems] = useState([]);
+  const apiUrl = import.meta.env.VITE_API_URL;
+
   const location = useLocation();
   const mockSearch = (query) => {
-    const mockData = [
-      { id: 1, name: "T-Shirt", price: "1000Rs." },
-      { id: 2, name: "Jeans", price: "2000Rs." },
-      { id: 3, name: "Sneakers", price: "5000Rs." },
-    ];
-    return mockData.filter((item) =>
+    const ProductData = axios.get(`{apiUrl}/api/products/list-products`);
+    return ProductData.filter((item) =>
       item.name.toLowerCase().includes(query.toLowerCase())
     );
   };

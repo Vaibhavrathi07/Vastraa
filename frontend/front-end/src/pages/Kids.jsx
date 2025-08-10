@@ -7,10 +7,11 @@ const kids = () => {
   const [products, setProducts] = useState([]);
    const navigate=useNavigate();
   const { addToCart, removeFromCart } = useCart();
+  const apiUrl = import.meta.env.VITE_API_URL;
  
   const fetchProducts = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/products/list-products');
+      const response = await axios.get(`{apiUrl}/api/products/list-products`);
       const KidsProduct = response.data.products.filter(product => product.category === "Kids");
       setProducts(KidsProduct.map(p => ({ ...p, quantity: 1 }))); 
     } catch (error) {
