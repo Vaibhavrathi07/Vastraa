@@ -11,7 +11,7 @@ const List = ({Token}) => {
     const fetchList = async () => {
     setLoading(true);
     setError(null);
-      const apiUrl = import.meta.env.BACKEND_URL;
+      const apiUrl = import.meta.env.VITE_BACKEND_URL;
     try {
         const token = localStorage.getItem('token');
         if (!token) {

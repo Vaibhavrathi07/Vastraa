@@ -31,7 +31,7 @@ const Add = ({ Token }) => {
       formData.append("category", category);
       formData.append("subCategory", subCategory);
       formData.append("quantity", quantity); 
-        const apiUrl = import.meta.env.BACKEND_URL;
+        const apiUrl = import.meta.env.VITE_BACKEND_URL;
 
       const response = await axios.post(
         `${apiUrl}/api/products/add-product`,
