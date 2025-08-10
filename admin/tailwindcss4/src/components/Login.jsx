@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 
 // Make sure your environment variable is properly named (usually VITE_BACKEND_URL in Vite)
-const backendUrl = "http://localhost:5000";
+const backendUrl = "http://localhost:10000";
 
 const Login = ({ setToken }) => {
   const [email, setEmail] = useState("");
