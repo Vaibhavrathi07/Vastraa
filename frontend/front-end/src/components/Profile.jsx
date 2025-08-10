@@ -17,11 +17,12 @@ export default function Profile() {
       });
     }
   }, [user]);
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:5000/api/user/update-Details', {
+      const response = await fetch(`${apiUrl}/api/user/update-Details`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

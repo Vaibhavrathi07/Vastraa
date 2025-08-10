@@ -24,10 +24,11 @@ const Login = ({ onLoginSuccess }) => {
   const handleSubmit = async (e) => {
   e.preventDefault();
   setIsLoading(true);
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   try {
     const response = await axios.post(
-      "http://localhost:5000/api/user/login",
+      `${apiUrl}/api/user/login`,
       { email: formData.email, password: formData.password },
       { headers: { "Content-Type": "application/json" } }
     );
