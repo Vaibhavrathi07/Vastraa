@@ -31,9 +31,10 @@ const Add = ({ Token }) => {
       formData.append("category", category);
       formData.append("subCategory", subCategory);
       formData.append("quantity", quantity); 
+        const apiUrl = import.meta.env.VITE_API_URL;
 
       const response = await axios.post(
-        "http://localhost:5000/api/products/add-product",
+        `${apiUrl}/api/products/add-product`,
         formData,
         {
           headers: {

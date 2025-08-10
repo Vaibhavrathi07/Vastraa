@@ -11,6 +11,7 @@ const List = ({Token}) => {
     const fetchList = async () => {
     setLoading(true);
     setError(null);
+      const apiUrl = import.meta.env.VITE_API_URL;
     try {
         const token = localStorage.getItem('token');
         if (!token) {
@@ -19,7 +20,7 @@ const List = ({Token}) => {
         }
         
         const response = await axios.get(
-            "http://localhost:5000/api/products/list-products",
+            `${apiUrl}/api/products/list-products`,
             {
                 headers: {
                     token: token
