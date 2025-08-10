@@ -12,7 +12,7 @@ const ProductSearchPage = () => {
 
   const location = useLocation();
   const mockSearch = (query) => {
-    const ProductData = axios.get(`{apiUrl}/api/products/list-products`);
+    const ProductData = axios.get(`${apiUrl}/api/products/list-products`);
     return ProductData.filter((item) =>
       item.name.toLowerCase().includes(query.toLowerCase())
     );

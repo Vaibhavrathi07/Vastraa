@@ -8,10 +8,11 @@ const WomenAccessories = () => {
   const [products, setProducts] = useState([]);
   const navigate = useNavigate();
   const { addToCart } = useCart();
+    const apiUrl = import.meta.env.VITE_API_URL;
  
   const fetchProducts = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/products/list-products');
+      const response = await axios.get(`${apiUrl}/api/products/list-products`);
       const menWProducts = response.data.products.filter(product => (
         product.category === "Women" && 
         product.subCategory === "Accessories"

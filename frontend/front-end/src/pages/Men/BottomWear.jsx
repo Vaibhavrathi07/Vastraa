@@ -12,7 +12,7 @@ const BottomWear = () => {
  
   const fetchProducts = async () => {
     try {
-      const response = await axios.get(`{apiUrl}/api/products/list-products`);
+      const response = await axios.get(`${apiUrl}/api/products/list-products`);
       const menWProducts = response.data.products.filter(product => (
         product.category === "Men" && 
         product.subCategory === "BottomWear"

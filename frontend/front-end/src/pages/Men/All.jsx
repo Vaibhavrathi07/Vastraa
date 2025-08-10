@@ -11,7 +11,7 @@ const All = () => {
  const apiUrl = import.meta.env.VITE_API_URL;
   const fetchProducts = async () => {
     try {
-      const response = await axios.get(`{apiUrl}/api/products/list-products`);
+      const response = await axios.get(`${apiUrl}/api/products/list-products`);
       const menWProducts = response.data.products.filter(product => (
         product.category === "Men"
       ));
